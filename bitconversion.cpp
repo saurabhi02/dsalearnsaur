@@ -19,9 +19,20 @@ int main()
    int mask=a ^ b;
    while(mask>0)
    {
+       /*
        if((mask & 1)==1)
        cnt++;
        mask=mask>>1;
+
+       This is one way to count bit with time complexity = logn
+       there is another better approch which is n & (n-1)
+       whose time complexity is no of bit on;
+       */
+
+        cnt++;
+        mask= mask & (mask - 1);
+        //this is best approc 
+        
    }
 
    cout<<cnt;
